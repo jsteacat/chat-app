@@ -13,6 +13,7 @@ io.on('connection', function (socket) {
     });
 
     socket.on('newMessage', function (message) {
+        console.log(message);
         Object.keys(socket.rooms).forEach(function(room) {
             io.sockets.in(room).emit('newMessage', message);
         });

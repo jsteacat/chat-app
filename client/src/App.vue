@@ -1,28 +1,19 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <hello></hello>
+    Hello Vue Chat!
   </div>
 </template>
 
 <script>
-import Hello from './components/Hello';
+  import store from './store';
+  import { router } from './bootstrap';
 
-export default {
-  name: 'app',
-  components: {
-    Hello,
-  },
-};
+  export default {
+    name: 'ChatApp',
+    router,
+    store,
+    mounted() {
+      this.$socket.emit('newMessage', 'Send new message!');
+    },
+  };
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
