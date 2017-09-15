@@ -12,8 +12,5 @@
     name: 'ChatApp',
     router,
     store,
-    mounted() {
-      this.$socket.emit('newMessage', 'Send new message!');
-    },
   };
 </script>
