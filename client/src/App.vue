@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    Hello Vue Chat!
+    <router-view></router-view>
   </div>
 </template>
 

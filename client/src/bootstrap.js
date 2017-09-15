@@ -27,6 +27,19 @@ Vue.use(VueRouter);
 export const router = new VueRouter({
   routes,
 });
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(m => m.meta.joined) && !store.state.hasJoined) {
+    next({
+      name: 'join.index',
+    });
+  } else if (to.matched.some(m => m.meta.guest) && store.state.hasJoined) {
+    next({
+      name: 'room.index',
+    });
+  } else {
+    next();
+  }
+});
 VuexRouterSync.sync(store, router);
 
 Vue.router = router; // to global
