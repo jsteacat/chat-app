@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import 'vendor/reset';
+
+html, body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+
+body {
+  box-sizing: border-box;
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+html, body, #app {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+// .section
+.section {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+
+  &--black {
+    background-color: #000;
+  }
+
+  &--full {
+    align-items: baseline;
+    align-self: stretch;
+    flex: 1;
+    overflow: auto;
+  }
+}
+
+// .form
+.form {
+  display: flex;
+  flex-direction: column;
+
+  &__group {
+    display: flex;
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// .text-field
+.text-field {
+  font-size: 1rem;
+  color: #fff;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 8px 6px 6px;
+  border-bottom: 2px solid #fff;
+
+  &--large {
+    padding: 16px 8px 12px;
+    font-size: 1.25rem;
+    border-width: 4px;
+  }
+}
+
+// .button
+.button {
+  background-color: #fff;
+  color: #000;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 8px 10px;
+
+  &--large {
+    font-size: 1.25rem;
+    padding: 12px 24px;
+  }
+
+  &--disabled {
+    cursor: not-allowed;
+    opacity: .7;
+  }
+}

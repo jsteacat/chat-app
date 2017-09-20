@@ -1,20 +1,30 @@
 <template>
-  <div>
-    <form @submit.prevent="join(room, username)">
-      <input
-        type="text"
-        placeholder="Room"
-        v-model="room"
-      >
-      <input
-        type="text"
-        placeholder="Username"
-        v-model="username"
-      >
-      <button
-        type="submit"
-        :disabled="!isValid"
-      >Войти</button>
+  <div class="section section--black section--full">
+    <form class="form" @submit.prevent="join(room, username)">
+      <div class="form__group">
+        <input
+          class="text-field text-field--large"
+          type="text"
+          placeholder="Room"
+          v-model="room"
+        >
+      </div>
+      <div class="form__group">
+        <input
+          class="text-field text-field--large"
+          type="text"
+          placeholder="Username"
+          v-model="username"
+        >
+      </div>
+      <div class="form__group">
+        <button
+          class="button button--large"
+          :class="{ 'button--disabled': !isValid }"
+          type="submit"
+          :disabled="!isValid"
+        >Войти</button>
+      </div>
     </form>
   </div>
 </template>
