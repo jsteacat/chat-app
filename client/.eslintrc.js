@@ -28,6 +28,7 @@ module.exports = {
     'import/first': 0,
     'no-param-reassign': 0,
     'import/no-dynamic-require': 0,
+    'no-unused-vars': 0,
     // don't require .vue extension when importing
     'import/extensions': ['error', 'always', {
       'js': 'never',
@@ -40,4 +41,4 @@ module.exports = {
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0
   }
-}
+};

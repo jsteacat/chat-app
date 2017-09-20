@@ -18,6 +18,10 @@ export default {
     state.room = room;
     state.username = username;
     state.hasJoined = true;
+
+    Vue.router.push({
+      name: 'room.index',
+    });
   },
   LEAVE: (state) => {
     Vue.socket.emit('leaveRoom', state.room);
