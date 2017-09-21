@@ -1,35 +1,41 @@
 <template>
-  <div class="section section--black section--full">
-    <form class="form" @submit.prevent="join(room, username)">
-      <div class="form__group">
-        <input
-          class="text-field text-field--large"
-          type="text"
+    <v-section
+      color="black"
+      full
+    >
+    <v-form @submit.prevent.native="join(room, username)">
+      <v-form-group>
+        <v-text-field
+          size="large"
           placeholder="Room"
           v-model="room"
-        >
-      </div>
-      <div class="form__group">
-        <input
-          class="text-field text-field--large"
-          type="text"
+        ></v-text-field>
+      </v-form-group>
+      <v-form-group>
+        <v-text-field
+          size="large"
           placeholder="Username"
           v-model="username"
-        >
-      </div>
-      <div class="form__group">
-        <button
-          class="button button--large"
-          :class="{ 'button--disabled': !isValid }"
-          type="submit"
+        ></v-text-field>
+      </v-form-group>
+      <v-form-group>
+        <v-button
+          size="large"
           :disabled="!isValid"
-        >Войти</button>
-      </div>
-    </form>
-  </div>
+          type="submit"
+        >Войти</v-button>
+      </v-form-group>
+    </v-form>
+  </v-section>
 </template>
 
 <script>
+  import VSection from '@/components/section/section';
+  import VForm from '@/components/form/form';
+  import VFormGroup from '@/components/form/form-group';
+  import VTextField from '@/components/text-field/text-field';
+  import VButton from '@/components/button/button';
+
   export default {
     data() {
       return {
@@ -54,6 +60,13 @@
           this.$store.dispatch('join', { username, room });
         }
       },
+    },
+    components: {
+      VSection,
+      VForm,
+      VFormGroup,
+      VTextField,
+      VButton,
     },
   };
 </script>
