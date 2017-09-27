@@ -12,5 +12,10 @@
     name: 'ChatApp',
     router,
     store,
+    mounted() {
+      this.$socket.on('newMessage', (message) => {
+        store.dispatch('newMessage', message);
+      });
+    },
   };
 </script>

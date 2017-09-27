@@ -14,6 +14,9 @@ io.on('connection', function (socket) {
 
     socket.on('newMessage', function (message) {
         Object.keys(socket.rooms).forEach(function(room) {
+            if (room === socket.id) {
+                return;
+            }
             io.sockets.in(room).emit('newMessage', message);
         });
     });

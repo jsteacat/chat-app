@@ -29,6 +29,7 @@ module.exports = {
     'no-param-reassign': 0,
     'import/no-dynamic-require': 0,
     'no-unused-vars': 0,
+    'no-console': 0,
     // don't require .vue extension when importing
     'import/extensions': ['error', 'always', {
       'js': 'never',
