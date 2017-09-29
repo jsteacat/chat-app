@@ -23,7 +23,7 @@
           size="large"
           :disabled="!isValid"
           type="submit"
-        >Войти</v-button>
+        >Enter</v-button>
       </v-form-group>
     </v-form>
   </v-section>
